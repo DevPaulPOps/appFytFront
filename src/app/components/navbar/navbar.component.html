@@ -1,0 +1,54 @@
+<nav class="navbar navbar-expand-lg bg-primary">
+  <div class="container-fluid">
+    <!-- Bouton pour ouvrir la sidebar, avec un ajustement pour les grands écrans -->
+    <p-button
+      (click)="sidebarVisible = true"
+      class="p-button-rounded p-button-info mr-2"
+      icon="pi pi-bars"
+    ></p-button>
+
+    <!-- Titre ou Logo, ajusté pour inclure le logo -->
+    <a class="navbar-brand" href="/">
+      <span class="ml-2 text-white">Find Your Team</span>
+    </a>
+
+    <!-- Zone d'authentification plus visible -->
+    <div class="ml-auto">
+      <app-auth-button></app-auth-button>
+    </div>
+  </div>
+</nav>
+
+<p-sidebar
+  [(visible)]="sidebarVisible"
+  [modal]="true"
+  class="bg-dark text-white"
+>
+  <div class="text-center mb-4">
+    <img alt="Find Your Team Logo" height="60" src="assets/FYT.svg" />
+    <h3 class="mt-2">Navigation</h3>
+  </div>
+
+  <ul class="nav flex-column">
+    <li class="nav-item">
+      <a class="nav-link text-warning" routerLink="/">
+        <i class="pi pi-home mr-2"></i>Accueil
+      </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link text-warning" routerLink="/event-form">
+        <i class="pi pi-calendar-plus mr-2"></i>Créer un événement
+      </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link text-warning" routerLink="/map-and-list">
+        <i class="pi pi-map-marker mr-2"></i>Voir la carte
+      </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link text-warning" routerLink="/chat">
+        <i class="pi pi-send"></i>Chat avec les participants
+      </a>
+    </li>
+  </ul>
+</p-sidebar>

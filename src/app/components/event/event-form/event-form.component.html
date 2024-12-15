@@ -1,0 +1,75 @@
+<div class="container">
+  <form (ngSubmit)="onSubmit()" [formGroup]="eventForm" class="event-form">
+    <div class="mb-3">
+      <label class="form-label" for="sportCategory">Catégorie de Sport</label>
+      <p-dropdown
+        (onChange)="onCategoryChange(eventForm.get('sportCategory')!.value)"
+        [options]="categories"
+        class="form-control"
+        formControlName="sportCategory"
+        id="sportCategory"
+        optionLabel="label"
+        placeholder="Sélectionnez une catégorie"
+      ></p-dropdown>
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label" for="sportName">Nom de Sport</label>
+      <p-dropdown
+        [options]="sports"
+        class="form-control"
+        formControlName="sportName"
+        id="sportName"
+        optionLabel="label"
+        placeholder="Sélectionnez un sport"
+      ></p-dropdown>
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label" for="description">Description:</label>
+      <textarea
+        [autoResize]="true"
+        class="form-control"
+        cols="30"
+        formControlName="description"
+        id="description"
+        pInputTextarea
+        rows="5"
+      ></textarea>
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label" for="date">Date:</label>
+      <p-calendar
+        [showIcon]="true"
+        class="form-control"
+        formControlName="date"
+        id="date"
+        type="date"
+      ></p-calendar>
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label" for="location">Lieu:</label>
+      <input
+        aria-describedby="location"
+        class="form-control"
+        formControlName="location"
+        id="location"
+        pInputText
+      />
+      <small class="form-text" id="username-help"
+        >Entrez le lieu de l'événement.</small
+      >
+    </div>
+
+    <button
+      [disabled]="eventForm.invalid"
+      class="btn btn-primary"
+      type="submit"
+    >
+      <i class="pi pi-check"></i>
+      {{ isUpdateMode ? "Modifier" : "Ajouter l'événement" }}
+    </button>
+  </form>
+</div>

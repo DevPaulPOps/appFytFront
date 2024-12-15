@@ -1,0 +1,68 @@
+<div class="landing-page-container">
+  <section class="hero-section bg-light py-5 text-center">
+    <div
+      class="hero-card mx-auto shadow-lg p-3 mb-5 bg-white rounded"
+      style="max-width: 600px"
+    >
+      <div class="card-header mb-4">
+        <h1>Bienvenue sur <span class="highlight">Find Your Team</span> !</h1>
+        <div class="logo-container my-3">
+          <img
+            alt="Find Your Team logo"
+            class="logo img-fluid"
+            src="assets/FYT.svg"
+          />
+        </div>
+      </div>
+      <div class="card-content mb-4">
+        <p class="hero-description lead">
+          Rejoins notre communauté de passionnés et découvre les meilleurs
+          partenaires sportifs près de chez toi. Ensemble atteignons de nouveaux
+          sommets.
+        </p>
+      </div>
+      <div class="card-actions">
+        <button (click)="navigateToApp()" class="btn btn-success" type="button">
+          <i class="pi pi-search"></i> Explorer maintenant
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <div class="card-list container mt-5">
+    <div class="row">
+      <div
+        *ngFor="let feature of features"
+        class="col-md-4 mb-4 d-flex align-items-stretch"
+      >
+        <p-card [header]="feature.title" class="w-100">
+          <p>{{ feature.description }}</p>
+        </p-card>
+      </div>
+    </div>
+  </div>
+
+  <p-stepper class="mt-5">
+    <p-stepperPanel *ngFor="let step of steps" header="{{ step.title }}">
+      <ng-template
+        let-index="index"
+        let-nextCallback="nextCallback"
+        pTemplate="content"
+      >
+        <div class="flex flex-column h-12rem mb-4">
+          <p-card class="mb-3" header="{{ step.title }}">
+            <p>{{ step.description }}</p>
+          </p-card>
+        </div>
+        <div class="flex pt-4 justify-content-end">
+          <p-button
+            (onClick)="nextCallback.emit()"
+            icon="pi pi-arrow-right"
+            iconPos="right"
+            label="Next"
+          />
+        </div>
+      </ng-template>
+    </p-stepperPanel>
+  </p-stepper>
+</div>

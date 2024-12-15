@@ -1,0 +1,50 @@
+@import "../../../scss/_variables.scss";
+
+.navbar {
+  background-color: $primary-color !important; // Override la couleur de fond
+
+  .navbar-brand {
+    color: #fff !important; // Couleur du texte pour le titre ou logo
+
+    &:hover {
+      color: lighten(
+        $primary-color,
+        10%
+      ) !important; // Légèrement plus clair au survol
+    }
+  }
+
+  .nav-link {
+    color: #fcb300 !important; // Utilisez votre couleur préférée ou une variable
+
+    &:hover {
+      color: lighten(
+        #fcb300,
+        10%
+      ) !important; // Légèrement plus clair au survol
+    }
+  }
+
+  .p-button {
+    .pi-bars {
+      color: #fff !important; // Couleur de l'icône du bouton
+    }
+  }
+}
+
+// Personnalisation du p-sidebar pour correspondre à la navbar
+.p-sidebar {
+  background-color: darken(
+    $primary-color,
+    5%
+  ) !important; // Un peu plus foncé que la navbar
+
+  .nav-item .nav-link {
+    &:hover {
+      background-color: lighten(
+        darken($primary-color, 5%),
+        5%
+      ) !important; // Effet de survol
+    }
+  }
+}

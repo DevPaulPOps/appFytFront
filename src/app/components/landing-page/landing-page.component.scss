@@ -1,0 +1,106 @@
+@import "../../../scss/_variables.scss";
+//landing page
+.landing-page-container {
+  .hero-section {
+    background-color: $secondary-color;
+    color: $primary-color;
+    padding: 60px 0;
+    text-align: center;
+
+    .hero-card {
+      max-width: 80%;
+      background: $primary-color;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      padding: 40px;
+      margin: auto;
+
+      .highlight {
+        color: $accent-color;
+      }
+
+      .logo-container img {
+        width: 150px;
+        margin: 20px auto;
+      }
+
+      .card-content {
+        color: $primary-color;
+        font-size: 1.1rem;
+        margin-bottom: 30px;
+      }
+
+      .card-actions button {
+        font-size: 1.2rem;
+        padding: 10px 30px;
+        border-radius: 20px;
+        display: inline-flex;
+        align-items: center;
+        background-color: $success-color;
+        border: none;
+
+        &:hover {
+          background-color: darken($success-color, 10%);
+        }
+
+        .pi {
+          margin-right: 8px;
+        }
+      }
+    }
+  }
+}
+
+.card-list {
+  margin-top: 80px;
+
+  .row {
+    justify-content: space-around;
+
+    .col-md-4 {
+      p-card {
+        box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
+        border-radius: 8px;
+
+        .p-card-title {
+          color: $primary-color;
+        }
+
+        .p-card-content {
+          padding: 15px;
+        }
+      }
+    }
+  }
+}
+
+.p-stepper {
+  margin-top: 50px;
+  text-align: center;
+
+  .p-stepper-header {
+    background-color: $primary-color;
+
+    .p-step-label {
+      color: #fff;
+    }
+  }
+
+  .p-stepper-content {
+    .p-card {
+      margin: 10px 0;
+    }
+  }
+
+  .p-button {
+    background-color: $accent-color;
+
+    &:hover {
+      background-color: darken($accent-color, 10%);
+    }
+
+    .pi {
+      margin-right: 0.5em;
+    }
+  }
+}

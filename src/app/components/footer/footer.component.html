@@ -1,0 +1,32 @@
+<footer class="footer bg-dark text-light pt-3 pb-3">
+  <div class="container">
+    <div class="row">
+      <div class="col-12 mb-3 text-center">
+        <p class="lead">
+          Ce projet a été réalisé par
+          <a
+            [href]="authorLink"
+            class="text-warning"
+            title="Profil GitHub de Paul"
+            >Paul</a
+          >
+          lors de son apprentissage chez
+          <a
+            [href]="learningPlaceLink"
+            class="text-warning"
+            title="Site Web de WeVii"
+            >WeVii</a
+          >
+          sous la supervision de
+          <a
+            [href]="supervisorLink"
+            class="text-warning"
+            title="Profil GitHub de Nicolas"
+            >Nicolas</a
+          >.<br />
+          <span>{{ projectPurpose }}</span>
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>

@@ -1,0 +1,14 @@
+FROM node:latest
+LABEL authors="perig"
+WORKDIR /app
+
+COPY server/*.json /app/
+COPY server/server.js /app/
+
+
+COPY server/app-fyt /app/
+
+RUN npm install
+
+EXPOSE 443
+CMD ["node", "server.js"]

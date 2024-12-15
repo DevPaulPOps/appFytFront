@@ -1,0 +1,9 @@
+terraform
+.angular
+*.json
+*.yaml
+node_modules
+src
+README.md
+Makefile
+server/*.js*

@@ -1,0 +1,22 @@
+// styles.scss
+@import "scss/variables";
+@import "@angular/material/prebuilt-themes/indigo-pink.css";
+@import "primeng/resources/themes/lara-light-blue/theme.css";
+@import "primeng/resources/primeng.css";
+@import "primeicons/primeicons.css";
+@import "stream-chat-angular/src/assets/styles/v2/scss/index.scss";
+
+body {
+  font-family: $body-font;
+  background-color: $tertiary-color;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+html {
+  height: 100%;
+  margin: 0;
+}

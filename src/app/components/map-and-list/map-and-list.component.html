@@ -1,0 +1,43 @@
+<div class="container-fluid p-0 overflow-hidden">
+  <div id="map"></div>
+
+  <div class="event-list-container p-shadow-2">
+    <p-carousel
+      [circular]="true"
+      [numScroll]="2"
+      [numVisible]="2"
+      [value]="(events$ | async) ?? []"
+      styleClass="custom-carousel"
+    >
+      <ng-template let-event pTemplate="item">
+        <p-card class="event-card">
+          <ng-template pTemplate="header">
+            <div class="event-title">{{ event.sport.name }}</div>
+            <div class="event-date">{{ event.date | date: "longDate" }}</div>
+          </ng-template>
+          <ng-template pTemplate="content">
+            <p>{{ event.description }}</p>
+          </ng-template>
+          <ng-template pTemplate="footer">
+            <div class="event-actions">
+              <a
+                *ngIf="event.organizer === userPseudo"
+                [routerLink]="['/event-form/', event._id]"
+                class="edit-button"
+              >
+                <i class="pi pi-pencil"></i>
+              </a>
+              <button
+                (click)="deleteEvent(event._id!, userPseudo)"
+                *ngIf="event.organizer === userPseudo"
+                class="delete-button"
+              >
+                <i class="pi pi-trash"></i>
+              </button>
+            </div>
+          </ng-template>
+        </p-card>
+      </ng-template>
+    </p-carousel>
+  </div>
+</div>

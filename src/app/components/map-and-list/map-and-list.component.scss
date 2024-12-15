@@ -1,0 +1,74 @@
+.container-fluid {
+  height: calc(100vh - 120px);
+  position: relative;
+  overflow: hidden;
+
+  #map {
+    position: fixed;
+    top: 60px;
+    right: 0;
+    bottom: 60px;
+    left: 0;
+    z-index: 1;
+  }
+
+  .event-list-container {
+    position: absolute;
+    top: 60px;
+    right: 1rem;
+    bottom: 60px;
+    z-index: 2;
+    max-width: 20%;
+    background: #fff;
+    border-radius: 8px;
+    overflow-y: auto;
+    height: 30% !important;
+    @media (max-width: 768px) {
+      position: fixed;
+      top: unset;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      max-width: none;
+      height: 50vh;
+      z-index: 3;
+      overflow-y: scroll;
+    }
+  }
+}
+
+.event-card {
+  border: none;
+  box-shadow: none;
+  margin-bottom: 10%;
+
+  .event-title {
+    font-weight: bold;
+    font-size: 1.2rem;
+  }
+
+  .event-date {
+    color: #666;
+    font-size: 1rem;
+  }
+
+  .event-actions {
+    display: flex;
+    justify-content: end;
+
+    .edit-button,
+    .delete-button {
+      padding: 0.5rem;
+      border: none;
+      background: transparent;
+    }
+
+    .edit-button {
+      color: green;
+    }
+
+    .delete-button {
+      color: red;
+    }
+  }
+}
